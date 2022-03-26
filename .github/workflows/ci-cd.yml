@@ -7,13 +7,13 @@ jobs:
   run:
     runs-on: [ubuntu-latest]
     steps:
-      - uses: actions/checkout@v2
-      - uses: iterative/setup-cml@v1
-      - uses: actions/setup-python@v2
-        with:
-          python-version: '3.7'
+       - uses: actions/checkout@v2
+       - uses: iterative/setup-cml@v1
+       - uses: actions/setup-python@v2
+         with:
+           python-version: '3.7'
 
-      -name: cml-run
+      - name: cml-run
         env:
           repo_token: ${{secrets.GITHUB_TOKEN }}
       run: |
