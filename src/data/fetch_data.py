@@ -8,7 +8,7 @@ import urllib.request as req
 
 workflow_step = 'Stage 1: Get Data'
 
-logpath = r'C:\Users\ASUS\OneDrive\Projects\stackoverflow_classification\logs'
+logpath = r'logs'
 
 logging.basicConfig(
     filename=os.path.join(logpath, 'running_logs.log'),

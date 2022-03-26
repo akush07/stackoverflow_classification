@@ -9,7 +9,7 @@ import math
 
 workflow_step = "stage 05 evaluate"  ## <<< change stage name
 
-logpath = r'C:\Users\ASUS\OneDrive\Projects\stackoverflow_classification\logs'
+logpath = r'logs'
 
 logging.basicConfig(
     filename=os.path.join(logpath, 'running_logs.log'),
