@@ -9,8 +9,10 @@ import math
 
 workflow_step = "stage 05 evaluate"  ## <<< change stage name
 
+logpath = r'C:\Users\ASUS\OneDrive\Projects\stackoverflow_classification\logs'
+
 logging.basicConfig(
-    filename=os.path.join("logs", 'running_logs.log'),
+    filename=os.path.join(logpath, 'running_logs.log'),
     level=logging.INFO,
     format="[%(asctime)s: %(levelname)s: %(module)s]: %(message)s",
     filemode="a"
@@ -78,7 +80,7 @@ def test(config_path):
 
 if __name__ == '__main__':
     args = argparse.ArgumentParser()
-    args.add_argument("--config", "-c", default="configs/config.yaml")
+    args.add_argument("--config", "-c", default="..\..\configs\config.yaml")
     parsed_args = args.parse_args()
 
     try:

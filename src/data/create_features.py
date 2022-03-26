@@ -9,8 +9,10 @@ from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
 
 workflow_step = "Stage 3: featurization"
 
+logpath = r'C:\Users\ASUS\OneDrive\Projects\stackoverflow_classification\logs'
+
 logging.basicConfig(
-    filename=os.path.join("logs", 'running_logs.log'),
+    filename=os.path.join(logpath, 'running_logs.log'),
     level=logging.INFO,
     format="[%(asctime)s: %(levelname)s: %(module)s]: %(message)s",
     filemode="a"
@@ -62,15 +64,15 @@ def create_feature(config_path, params_path):
 
 if __name__ == '__main__':
     args = argparse.ArgumentParser()
-    args.add_argument("--config", "-c", default="configs/config.yaml")
-    args.add_argument("--params", "-p", default="params.yaml")
+    args.add_argument("--config", "-c", default="..\..\configs\config.yaml")
+    args.add_argument("--params", "-p", default="..\..\params.yaml")
     parsed_args = args.parse_args()
 
     try:
         logging.info("\n********************")
-        logging.info(f">>>>> stage {STAGE} started <<<<<")
+        logging.info(f">>>>> stage {workflow_step} started <<<<<")
         create_feature(config_path=parsed_args.config, params_path=parsed_args.params)
-        logging.info(f">>>>> stage {STAGE} completed!<<<<<\n")
+        logging.info(f">>>>> stage {workflow_step} completed!<<<<<\n")
     except Exception as e:
         logging.exception(e)
         raise e

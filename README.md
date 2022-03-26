@@ -12,10 +12,27 @@ Problem Statement: Classify the tag based on the inputs provided.
 ## Steps
 1. Create Repository using boilerplate template
 2. Create environment
-3. 
+3. Pipeline Steps
+>+ Data Fetching
+>+ Data Preparation
+>+ Feature Creation
+>+ Model Training
+>+ Model Evaluation
+4. [CI/CD pipeline setup](studio.iterative.ai)
 
+DVC Commands Used:
+```commandline
+dvc init
+dvc repro
+dvc dag
+```
 
-STAGE 1: GET DATA
-
-Data Description:
-
+Git Commands Used:
+```commandline
+git init
+git status
+git checkout -b branchname
+git clone repo_link
+git pull 
+git push
+```

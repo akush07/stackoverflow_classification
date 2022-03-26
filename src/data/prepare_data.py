@@ -10,8 +10,10 @@ import random
 
 workflow_step = "Stage 2: prepare data"
 
+logpath = r'C:\Users\ASUS\OneDrive\Projects\stackoverflow_classification\logs'
+
 logging.basicConfig(
-    filename=os.path.join("logs", 'running_logs.log'),
+    filename=os.path.join(logpath, 'running_logs.log'),
     level=logging.INFO,
     format="[%(asctime)s: %(levelname)s: %(module)s]: %(message)s",
     filemode="a"
@@ -23,8 +25,8 @@ def data_preparation(config_path, params_path):
     config = read_yaml(config_path)
     params = read_yaml(params_path)
 
-    local_data_dir = config["source_download_dir"]["data_dir"]
-    data_filename = config["source_download_dir"]["data_file"]
+    local_data_dir = config["source_download_dirs"]["data_dir"]
+    data_filename = config["source_download_dirs"]["data_file"]
     input_data = os.path.join(local_data_dir, data_filename)
 
     split = params["prepare"]["split"]
@@ -49,8 +51,8 @@ def data_preparation(config_path, params_path):
 
 if __name__ == '__main__':
     args = argparse.ArgumentParser()
-    args.add_argument("--config", "-c", default="configs/config.yaml")
-    args.add_argument("--params", "-p", default="params.yaml")
+    args.add_argument("--config", "-c", default="../../configs/config.yaml")
+    args.add_argument("--params", "-p", default="../../params.yaml")
     parsed_args = args.parse_args()
 
     try:
