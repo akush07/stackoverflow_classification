@@ -13,19 +13,16 @@ jobs:
         with:
           python-version: '3.7'
 
-      -name:cml-run
+      -name: cml-run
         env:
           repo_token: ${{secrets.GITHUB_TOKEN }}
-        run: |
-          # Your ML workflow commands
-          pip install --upgrade pip
-          pip install -r requirements.txt
-          
-          dvc repro -v
-          
-          echo "# REPORTS" >> report.md
-          echo "## metrics" >> report.md
-          cat score.json >> report.md
-          
-          cml-send-comment report.md
+      run: |
+        pip install --upgrade pip
+        pip install -r requirements.txt
+        dvc repro         
+        echo "# REPORTS" >> report.md
+        echo "## metrics" >> report.md
+        cat scores.json >> report.md
+        dvc metrics show >> report.md
+        cml-send-comment report.md
           
