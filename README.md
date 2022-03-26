@@ -21,6 +21,15 @@ Problem Statement: Classify the tag based on the inputs provided.
 4. [CI/CD pipeline setup](studio.iterative.ai)
 >+ Add a view 
 >+ configure git settings on iterative.ai
+>+ Link project
+5. Start Experimenting:
+>+ Change params.yaml configs 
+>+ run dvc repro -f 
+>+ git add . && git commit -m "experiment ##"
+>+ git push
+>+ check in iterative.ai for new commit id and scores
+
+
 
 DVC Commands Used:
 ```commandline
