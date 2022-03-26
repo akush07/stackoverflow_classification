@@ -1,7 +1,7 @@
 # add stages here
 stages:
   get_data:
-    cmd: python src/data/fetch_data.py --config=../../configs/config.yaml
+    cmd: python src/data/fetch_data.py --config=configs/config.yaml
     deps:
       - src/data/fetch_data.py
       - src/utils/helper.py
@@ -10,7 +10,7 @@ stages:
       - data/data.xml
 
   prepare_data:
-    cmd: python src/data/prepare_data.py --config=../../configs/config.yaml --params=params.yaml
+    cmd: python src/data/prepare_data.py --config=configs/config.yaml --params=params.yaml
     deps:
       - src/data/prepare_data.py
       - src/utils/helper.py
@@ -24,7 +24,7 @@ stages:
       - artifacts/prepared/test.tsv
 
   featurize:
-    cmd: python src/data/create_features.py --config=../../configs/config.yaml --params=params.yaml
+    cmd: python src/data/create_features.py --config=configs/config.yaml --params=params.yaml
     deps:
       - src/data/create_features.py
       - src/utils/helper.py
@@ -39,7 +39,7 @@ stages:
       - artifacts/features/test.pkl
 
   train:
-    cmd: python src/models/train_fn.py --config=../../configs/config.yaml --params=params.yaml
+    cmd: python src/models/train_fn.py --config=configs/config.yaml --params=params.yaml
     deps:
       - src/models/train_fn.py
       - src/utils/helper.py
@@ -53,7 +53,7 @@ stages:
       - artifacts/model/model.pkl
 
   evaluate:
-    cmd: python src/models/test_fn.py --config=../../configs/config.yaml
+    cmd: python src/models/test_fn.py --config=configs/config.yaml
     deps:
       - src/models/test_fn.py
       - src/utils/helper.py
