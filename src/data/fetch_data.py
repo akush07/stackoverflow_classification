@@ -14,13 +14,13 @@ logging.basicConfig(
     filename=os.path.join(logpath, 'running_logs.log'),
     level=logging.INFO,
     format="[%(asctime)s: %(levelname)s: %(module)s]: %(message)s",
-    filemode="a"
+    filemode="w"
     )
 
 def get_data(config):
     source_data_url = config["source_data_url"]
     local_data_dir = config['source_download_dirs']['data_dir']
-    create_directories(local_data_dir)
+    create_directories([local_data_dir])
 
     data_filename = config["source_download_dirs"]["data_file"]
     local_data_filepath = os.path.join(local_data_dir, data_filename)
