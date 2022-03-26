@@ -10,6 +10,10 @@ workflow_step = 'Stage 1: Get Data'
 
 logpath = r'logs'
 
+os.makedirs(logpath, exist_ok=True)
+with open('running_logs.log','a') as f:
+    pass
+
 logging.basicConfig(
     filename=os.path.join(logpath, 'running_logs.log'),
     level=logging.INFO,
