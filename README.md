@@ -19,11 +19,14 @@ Problem Statement: Classify the tag based on the inputs provided.
 >+ Model Training
 >+ Model Evaluation
 4. [CI/CD pipeline setup](studio.iterative.ai)
+>+ Add a view 
+>+ configure git settings on iterative.ai
 
 DVC Commands Used:
 ```commandline
 dvc init
 dvc repro
+dvc repro -f << to run complete pipeline from start
 dvc dag
 ```
 
